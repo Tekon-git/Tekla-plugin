@@ -1,0 +1,113 @@
+﻿<tsd:PluginWindowBase  
+    x:Class="Frame_Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frame_Wpf" 
+    xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog" 
+      xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"
+    mc:Ignorable="d"
+    Title="{tsd:Loc albl_Title_Plugin}" Width="800" Height="530">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <UIControls:WpfOkApplyModifyGetOnOffCancel Grid.Row="2" Height="51" Margin="0,0,-0.4,-0.2" VerticalAlignment="Bottom" Width="694" ApplyClicked="WpfOkApplyModifyGetOnOffCancel_ApplyClicked" CancelClicked="WpfOkApplyModifyGetOnOffCancel_CancelClicked" ModifyClicked="WpfOkApplyModifyGetOnOffCancel_ModifyClicked" GetClicked="WpfOkApplyModifyGetOnOffCancel_GetClicked" OkClicked="WpfOkApplyModifyGetOnOffCancel_OkClicked" OnOffClicked="WpfOkApplyModifyGetOnOffCancel_OnOffClicked" />
+        <UIControls:WpfSaveLoad Grid.Row="0" Height="58" Margin="10,10,10,10" VerticalAlignment="Top" Width="694" />
+        <TabControl Grid.Row="1">
+            <TabItem Header="Option">
+                <Canvas x:Name="nip_Canvas" Background="LightGray">
+                    <Path x:Name="path_Frame" Stroke ="Black" StrokeThickness="5">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <LineGeometry StartPoint="100 100" EndPoint="100 300"/>
+                                <LineGeometry StartPoint="100 100" EndPoint="290 50"/>
+                                <LineGeometry StartPoint="290 50" EndPoint="490 100"/>
+                                <LineGeometry StartPoint="490 100" EndPoint="490 300"/>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="Path_Dimension" Stroke="Black" StrokeThickness="1">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <LineGeometry StartPoint="520 50" EndPoint="520 300"/>
+                                <LineGeometry StartPoint="290 50" EndPoint="520 50"/>
+                                <LineGeometry StartPoint="490 100" EndPoint="520 100"/>
+                                <LineGeometry StartPoint="490 300" EndPoint="520 300"/>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                    <Path x:Name="path_Ground" Stroke="Black" StrokeThickness="4">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <LineGeometry StartPoint="100 300" EndPoint="490 300" />
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                    <Rectangle Canvas.Top="295" Canvas.Left="95" Fill="Yellow" Height="10" Width="10"/>
+                    <Rectangle Canvas.Top="295" Canvas.Left="485" Fill="#FFF70DF7" Height="10" Width="10"/>
+                    <Label Canvas.Top="180" Canvas.Left="490" Content="H1"/>
+                    <Label Canvas.Top="58" Canvas.Left="490" Content="H2"/>
+                    <Label Canvas.Top="300" Canvas.Left="290" Content="L"/>
+                    <Label Canvas.Top="270" Canvas.Left="100" Content="Point 1"/>
+                    <Label Canvas.Top="100" Canvas.Left="100" Content="Point 2"/>
+                    <Label Canvas.Top="25" Canvas.Left="300" Content="Point 3"/>
+                    <StackPanel Canvas.Left="560" Canvas.Top="30" Width="210">
+                        <GroupBox Header="Geometry" Background="White">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <UIControls:WpfFilterCheckBox AttributeName="parameterh1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Label Grid.Column="1" Content="Height H1" HorizontalAlignment="Left"/>
+                                <TextBox Grid.Column="2" Width="70" Text="{Binding Path=H11}" HorizontalAlignment="Center"/>
+
+                                <UIControls:WpfFilterCheckBox AttributeName="parameterh2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="1" Content="Height H2" HorizontalAlignment="Left"/>
+                                <TextBox Grid.Row="1" Grid.Column="2" Width="70" Text="{Binding H22}" HorizontalAlignment="Center"/>
+
+                                <UIControls:WpfFilterCheckBox AttributeName="material" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Label Grid.Row="2" Grid.Column="1" Content="Material" HorizontalAlignment="left"/>
+                                <UIControls:WpfMaterialCatalog x:Name="MaterialCatalog" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" SelectClicked="MaterialCatalog_SelectClicked" SelectionDone="MaterialCatalog_SelectionDone"/>
+                                <TextBox Text="{Binding Material}" Grid.Row="2" Grid.Column="2" Width="70"  HorizontalAlignment="Center"/>
+
+                                <UIControls:WpfFilterCheckBox AttributeName="class" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Label Grid.Row="3" Grid.Column="1" Content="Class" HorizontalAlignment="Left"/>
+                                <TextBox Grid.Row="3" Grid.Column="2" Width="70" Text="{Binding Clas}" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </Canvas>
+            </TabItem>
+            <TabItem Header="Point 1"/>
+            <TabItem Header="Point 2">
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Connection 41" Height="100" HorizontalAlignment="Center" />
+                        <ToggleButton Grid.Column="1" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True" />
+                    </Grid>
+                </StackPanel>
+
+            </TabItem>
+            <TabItem Header="Point 3"/>
+
+        </TabControl>
+
+    </Grid>
+</tsd:PluginWindowBase>

@@ -1,0 +1,14 @@
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Frame_Wpf.csprojAssemblyReference.cache
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Frame_Wpf_MarkupCompile.cache
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Views\MainWindow.g.cs
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Frame_Wpf_MarkupCompile.lref
+D:\API\WPF MVVM\Tekla\Frame_WPF\bin\Debug\Frame_Wpf.dll
+D:\API\WPF MVVM\Tekla\Frame_WPF\bin\Debug\Frame_Wpf.pdb
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Views\MainWindow.baml
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Frame_Wpf.g.resources
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Frame_Wpf.Properties.Resources.resources
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Frame_Wpf.csproj.GenerateResource.cache
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Frame_Wpf.csproj.CoreCompileInputs.cache
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Frame_Wpf.dll
+D:\API\WPF MVVM\Tekla\Frame_WPF\ObjDir\2019\Frame_Wpf\Frame_Wpf.pdb
+D:\API\WPF MVVM\Tekla\Frame_WPF\bin\Debug\Frame_Wpf.ail

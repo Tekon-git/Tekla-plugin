@@ -1,0 +1,103 @@
+﻿<tsd:PluginWindowBase
+    x:Class="EndPlate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EndPlate"
+        xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog" xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
+    mc:Ignorable="d"
+        Title="{tsd:Loc albl_Title_Plugin}" Height="485.196" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <UIControls:WpfOkApplyModifyGetOnOffCancel Grid.Row="2" Height="51" Margin="50,0,49.6,0.4" VerticalAlignment="Bottom" Width="694" ApplyClicked="WpfOkApplyModifyGetOnOffCancel_ApplyClicked" CancelClicked="WpfOkApplyModifyGetOnOffCancel_CancelClicked" ModifyClicked="WpfOkApplyModifyGetOnOffCancel_ModifyClicked" GetClicked="WpfOkApplyModifyGetOnOffCancel_GetClicked" OkClicked="WpfOkApplyModifyGetOnOffCancel_OkClicked" OnOffClicked="WpfOkApplyModifyGetOnOffCancel_OnOffClicked" />
+        <UIControls:WpfSaveLoad Grid.Row="0" Height="58" Margin="10,10,10,10" VerticalAlignment="Top" Width="694" />
+        <TabControl Grid.Row="1">
+            <TabItem Header="Basic">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <UIControls:WpfFilterCheckBox AttributeName="" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Grid.Row="0" Grid.Column="1" Content="Name" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                    <TextBox Text="{Binding Path = PlateName}" Grid.Row="0" Grid.Column="2" Width="120"  HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="1" />
+
+                    <UIControls:WpfFilterCheckBox AttributeName="" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Grid.Row="1" Grid.Column="1" Content="Thickness" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                    <TextBox Text="{Binding Path = PlateThickness}" Grid.Row="1" Grid.Column="2" Width="120"  HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="1" />
+
+
+                   
+                </Grid>
+            </TabItem>
+            <TabItem Header="General">
+                <Grid Margin="0,13,0,-13">
+                    <Label Content="Up direction" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Locked" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Class" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Connection code" HorizontalAlignment="Left" Margin="10,159,0,0" VerticalAlignment="Top"/>
+                    <Label Content="AutoDefaults rule group" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top"/>
+                    <Label Content="AutoConnection rule group" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top"/>
+                    <UIControls:WpfFilterCheckBox x:Name="wpfFilterCheckBox11" Content="" HorizontalAlignment="Left" Margin="212,15,0,0" VerticalAlignment="Top" AttributeName="zsuunta" Width="16"/>
+                    <UIControls:WpfFilterCheckBox x:Name="wpfFilterCheckBox12" Content="" HorizontalAlignment="Left" Margin="212,44,0,0" VerticalAlignment="Top" AttributeName="zang1" Width="16"/>
+                    <UIControls:WpfFilterCheckBox x:Name="wpfFilterCheckBox13" Content="" HorizontalAlignment="Left" Margin="212,72,0,0" VerticalAlignment="Top" AttributeName="zang2" Width="16"/>
+                    <UIControls:WpfFilterCheckBox x:Name="wpfFilterCheckBox14" Content="" HorizontalAlignment="Left" Margin="212,107,0,0" VerticalAlignment="Top" AttributeName="OBJECT_LOCKED" Width="16"/>
+                    <UIControls:WpfFilterCheckBox x:Name="wpfFilterCheckBox15" Content="" HorizontalAlignment="Left" Margin="212,136,0,0" VerticalAlignment="Top" AttributeName="group_no" Width="16"/>
+                    <UIControls:WpfFilterCheckBox x:Name="wpfFilterCheckBox16" Content="" HorizontalAlignment="Left" Margin="212,164,0,0" VerticalAlignment="Top" AttributeName="joint_code" Width="16"/>
+                    <UIControls:WpfFilterCheckBox x:Name="wpfFilterCheckBox17" Content="" HorizontalAlignment="Left" Margin="212,193,0,0" VerticalAlignment="Top" AttributeName="ad_root" Width="16"/>
+                    <UIControls:WpfFilterCheckBox x:Name="wpfFilterCheckBox18" Content="" HorizontalAlignment="Left" Margin="212,223,0,0" VerticalAlignment="Top" AttributeName="ac_root" Width="16"/>
+                    <ComboBox x:Name="zsuunta" HorizontalAlignment="Left" Margin="233,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="{Binding zsuunta, FallbackValue=7, Mode=TwoWay}">
+                        <ComboBoxItem>none</ComboBoxItem>
+                        <ComboBoxItem>-Z</ComboBoxItem>
+                        <ComboBoxItem>+Z</ComboBoxItem>
+                        <ComboBoxItem>+X</ComboBoxItem>
+                        <ComboBoxItem>-X</ComboBoxItem>
+                        <ComboBoxItem>-Y</ComboBoxItem>
+                        <ComboBoxItem>+Y</ComboBoxItem>
+                        <ComboBoxItem>auto</ComboBoxItem>
+                    </ComboBox>
+                    <TextBox x:Name="zang1" HorizontalAlignment="Left" Height="23" Margin="233,40,0,0" TextWrapping="NoWrap" Text="{Binding zang1, FallbackValue= 0.00, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="zang2" HorizontalAlignment="Left" Height="23" Margin="233,68,0,0" TextWrapping="NoWrap" Text="{Binding zang2, FallbackValue= 0.00, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="OBJECT_LOCKED" HorizontalAlignment="Left" Margin="233,102,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="{Binding OBJECT_LOCKED, FallbackValue=0, Mode=TwoWay}">
+                        <ComboBoxItem Content="No"/>
+                        <ComboBoxItem Content="Yes"/>
+                    </ComboBox>
+                    <TextBox x:Name="group_no" HorizontalAlignment="Left" Height="23" Margin="233,132,0,0" TextWrapping="NoWrap" Text="{Binding group_no, FallbackValue=1, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="joint_code" HorizontalAlignment="Left" Height="23" Margin="233,160,0,0" TextWrapping="NoWrap" Text="{Binding joint_code, FallbackValue='', Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="ad_root" HorizontalAlignment="Left" Margin="233,188,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="{Binding ad_root, FallbackValue=0, Mode=TwoWay}">
+                        <ComboBoxItem Content="No"/>
+                        <ComboBoxItem Content="Construsoft"/>
+                    </ComboBox>
+                    <ComboBox x:Name="ac_root" HorizontalAlignment="Left" Margin="233,218,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="{Binding ac_root, FallbackValue=0, Mode=TwoWay}">
+                        <ComboBoxItem Content="No"/>
+                        <ComboBoxItem Content="Construsoft"/>
+                    </ComboBox>
+                    <Image x:Name="image1" HorizontalAlignment="Left" Height="74" Margin="123,17,0,0" VerticalAlignment="Top" Width="83"  Stretch="None">
+                        <Image.Effect>
+                            <DropShadowEffect BlurRadius="10" Opacity="0.1" Direction="295" ShadowDepth="6"/>
+                        </Image.Effect>
+                    </Image>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Bolts">
+                
+            </TabItem>
+           
+            
+        </TabControl>
+    </Grid>
+</tsd:PluginWindowBase>
